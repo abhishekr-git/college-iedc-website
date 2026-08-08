@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%">
+  <defs>
+    <style>
+      .logo-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 900; }
+    </style>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F52BA"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#6C5CE7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Lightbulb Base & Outline -->
+  <g stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bulb Rays -->
+    <line x1="85" y1="20" x2="85" y2="32" />
+    <line x1="45" y1="35" x2="54" y2="44" />
+    <line x1="22" y1="72" x2="35" y2="76" />
+    <line x1="125" y1="35" x2="116" y2="44" />
+    <line x1="148" y1="72" x2="135" y2="76" />
+
+    <!-- Bulb Body -->
+    <path d="M 52 110 C 35 90 35 60 55 42 C 75 25 105 25 120 45 C 132 60 130 85 118 105 C 110 118 108 126 108 135 L 62 135 C 62 126 60 118 52 110 Z" />
+
+    <!-- Bulb Screw Base Lines -->
+    <line x1="65" y1="144" x2="105" y2="144" />
+    <line x1="68" y1="153" x2="102" y2="153" />
+    <path d="M 74 162 C 80 167 90 167 96 162" />
+  </g>
+
+  <!-- Flight Path Dashed Line & Paper Plane -->
+  <g fill="currentColor">
+    <path d="M 45 125 C 60 115 90 90 120 75" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 4" fill="none" />
+    <!-- Paper Plane Arrow -->
+    <path d="M 105 60 L 165 45 L 140 100 L 128 78 Z" />
+  </g>
+
+  <!-- Logo Text: IEDC CEKnpy -->
+  <text x="180" y="115" class="logo-text" font-size="44" fill="currentColor" letter-spacing="-1">IEDC <tspan fill="url(#logoGrad)">CEKnpy</tspan></text>
+
+  <!-- Swoosh Arc & Sparkle Star -->
+  <g fill="currentColor">
+    <!-- Curved Swoosh Arc below CEKnpy -->
+    <path d="M 320 155 C 380 155 440 130 460 90 C 420 120 370 140 320 145 Z" />
+    
+    <!-- 4-point Sparkle Star -->
+    <path d="M 445 68 Q 445 60 452 60 Q 445 60 445 52 Q 445 60 438 60 Q 445 60 445 68 Z" />
+  </g>
+</svg>
