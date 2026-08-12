@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Info, Mail, Lightbulb, Sparkles, Users, ArrowRight, ShieldCheck } from "lucide-react";
+import { X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MobileNavProps {
@@ -17,78 +17,57 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const pathname = usePathname();
 
   const moreLinks = [
-    {
-      label: "About IEDC",
-      href: "/about",
-      icon: Info,
-      description: "Vision, mission & institutional ecosystem",
-    },
-    {
-      label: "Contact Us",
-      href: "/contact",
-      icon: Mail,
-      description: "Location map & inquiry portal",
-    },
-    {
-      label: "Startup Ideas",
-      href: "/pitch-idea",
-      icon: Lightbulb,
-      description: "Incubate your venture & request seed grants",
-    },
-    {
-      label: "Aarambh 3.0",
-      href: "/events/aarambh",
-      icon: Sparkles,
-      description: "Flagship innovation summit microsite",
-    },
-    {
-      label: "Executive Committee",
-      href: "/team/current",
-      icon: Users,
-      description: "Student leads & faculty mentors",
-    },
+    { label: "Home", href: "/" },
+    { label: "Events", href: "/events" },
+    { label: "Team", href: "/team/current" },
+    { label: "About IEDC", href: "/about" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Pitch Your Idea", href: "/pitch-idea" },
+    { label: "Aarambh 3.0", href: "/events/aarambh" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Past Execom", href: "/team/past" },
   ];
 
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop Overlay */}
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-[#050608]/80 backdrop-blur-md md:hidden"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm md:hidden"
           />
 
-          {/* Premium Bottom Sheet Drawer */}
+          {/* Bottom Sheet Drawer */}
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-0 inset-x-0 z-50 bg-[#0A0A0E]/95 backdrop-blur-3xl border-t border-white/[0.08] rounded-t-[32px] shadow-2xl p-6 md:hidden max-h-[85vh] overflow-y-auto flex flex-col justify-between"
+            className="fixed bottom-0 inset-x-0 z-50 bg-[var(--bg-surface)] border-t border-[var(--border-hover)] rounded-t-[24px] p-6 md:hidden max-h-[80vh] overflow-y-auto"
           >
-            {/* Top Drag Indicator Pill */}
-            <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mb-4" />
+            {/* Drag indicator */}
+            <div className="w-10 h-1 bg-[var(--border-strong)] rounded-full mx-auto mb-5" />
 
-            {/* Sheet Header */}
-            <div className="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-4">
-              <Link href="/" onClick={onClose} className="flex items-center gap-3">
-                <div className="relative h-6 w-24">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-5">
+              <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
+                <div className="relative h-5 w-20">
                   <Image
                     src="/images/iedc-logo-light.svg"
-                    alt="IEDC CEKnpy Logo"
+                    alt="IEDC CEKnpy"
                     fill
                     className="object-contain object-left"
                   />
                 </div>
-                <div className="h-4 w-[1px] bg-white/20" />
-                <div className="relative h-5 w-28">
+                <div className="h-3.5 w-[1px] bg-[var(--border-strong)]" />
+                <div className="relative h-4 w-24">
                   <Image
                     src="/images/ksum-iedc-logo-light.svg"
-                    alt="Kerala Startup Mission Logo"
+                    alt="KSUM IEDC"
                     fill
                     className="object-contain object-left"
                   />
@@ -98,17 +77,19 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="w-9 h-9 rounded-full bg-white/[0.08] flex items-center justify-center text-white/72 hover:text-white focus:outline-none"
+                className="w-8 h-8 rounded-full bg-[var(--border)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none"
               >
-                <X className="w-5 h-5" strokeWidth={1.8} />
+                <X className="w-4 h-4" strokeWidth={2} />
               </button>
             </div>
 
-            {/* Links List */}
-            <div className="space-y-2 py-2">
+            {/* Navigation Links */}
+            <div className="space-y-0.5">
               {moreLinks.map((item) => {
-                const Icon = item.icon;
-                const isActive = pathname === item.href;
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
 
                 return (
                   <Link
@@ -116,32 +97,22 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                     href={item.href}
                     onClick={onClose}
                     className={cn(
-                      "flex items-center gap-3.5 p-3.5 rounded-2xl transition-all duration-200 group min-h-[48px]",
+                      "flex items-center justify-between py-3.5 px-3.5 rounded-xl transition-all duration-200 min-h-[48px]",
                       isActive
-                        ? "bg-white/10 border border-white/15 text-white"
-                        : "hover:bg-white/[0.06] text-white/72 hover:text-white"
+                        ? "bg-[var(--border-hover)] text-[var(--text-primary)] font-semibold"
+                        : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--border)]"
                     )}
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/15 border border-[#3B82F6]/30 flex items-center justify-center text-[#3B82F6] group-hover:scale-105 transition-transform shrink-0">
-                      <Icon className="w-5 h-5" strokeWidth={1.8} />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-bold text-white group-hover:text-[#60A5FA] transition-colors flex items-center justify-between">
-                        <span>{item.label}</span>
-                        {isActive && <ArrowRight className="w-4 h-4 text-[#3B82F6]" strokeWidth={1.8} />}
-                      </div>
-                      <div className="text-xs text-white/48 font-normal">
-                        {item.description}
-                      </div>
-                    </div>
+                    <span className="text-[15px] font-medium">{item.label}</span>
+                    <ChevronRight className="w-4 h-4 text-[var(--text-tertiary)]" strokeWidth={1.5} />
                   </Link>
                 );
               })}
             </div>
 
-            {/* Footer Notice */}
-            <div className="pt-4 mt-4 border-t border-white/[0.08] text-center text-xs text-white/48">
-              IEDC CEKnpy • Official Chapter under KSUM
+            {/* Footer */}
+            <div className="pt-4 mt-4 border-t border-[var(--border)] text-center text-xs text-[var(--text-tertiary)]">
+              IEDC CEKNPY • Under Kerala Startup Mission
             </div>
           </motion.div>
         </>

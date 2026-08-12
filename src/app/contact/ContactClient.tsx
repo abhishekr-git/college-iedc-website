@@ -18,89 +18,58 @@ export function ContactClient() {
   };
 
   return (
-    <div className="bg-[#050505] text-[#FAFAFA] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Direct Info Cards & Map */}
-          <div className="lg:col-span-5 space-y-6">
-            <div>
-              <span className="text-xs font-bold text-[#3B82F6] uppercase tracking-widest">Get In Touch</span>
-              <h2 className="text-3xl font-extrabold text-[#FAFAFA] mt-1 mb-2">Reach Out to IEDC Desk</h2>
-              <p className="text-[#A1A1AA] text-sm leading-relaxed font-normal">
-                Have an innovative startup idea, want to sponsor our events, or collaborate on technical workshops? We are always eager to connect.
-              </p>
-            </div>
-
-            <Card className="bg-white/[0.04] p-6 border-white/[0.08] space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center text-[#3B82F6] shrink-0">
-                  <MapPin className="w-5 h-5" strokeWidth={1.8} />
-                </div>
+    <div className="bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          {/* Left Column */}
+          <div className="lg:col-span-5 space-y-5">
+            <Card className="p-6 space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <h3 className="text-sm font-bold text-[#FAFAFA]">Campus Address</h3>
-                  <p className="text-xs text-[#A1A1AA] mt-0.5 leading-relaxed font-normal">{SITE_CONFIG.location}</p>
+                  <h3 className="text-sm font-medium text-[var(--text-primary)]">Address</h3>
+                  <p className="text-xs text-[var(--text-secondary)] mt-0.5 leading-relaxed">{SITE_CONFIG.location}</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 pt-3 border-t border-white/[0.08]">
-                <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 flex items-center justify-center text-[#8B5CF6] shrink-0">
-                  <Mail className="w-5 h-5" strokeWidth={1.8} />
-                </div>
+              <div className="flex items-start gap-3 pt-3 border-t border-[var(--border)]">
+                <Mail className="w-4 h-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <h3 className="text-sm font-bold text-[#FAFAFA]">Email Address</h3>
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-xs text-[#3B82F6] font-semibold hover:underline">
+                  <h3 className="text-sm font-medium text-[var(--text-primary)]">Email</h3>
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-xs text-[var(--accent)] hover:underline">
                     {SITE_CONFIG.email}
                   </a>
                 </div>
               </div>
             </Card>
 
-            {/* Social Links */}
-            <Card className="bg-white/[0.04] text-[#FAFAFA] p-6 border-white/[0.08]">
-              <h3 className="text-sm font-bold mb-3 text-[#FAFAFA]">Connect on Social Networks</h3>
-              <div className="flex items-center gap-3">
-                <a
-                  href={SITE_CONFIG.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-10 h-10 rounded-xl bg-[#09090B] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#3B82F6] transition-all min-h-[44px] min-w-[44px]"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href={SITE_CONFIG.socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="w-10 h-10 rounded-xl bg-[#09090B] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#8B5CF6] transition-all min-h-[44px] min-w-[44px]"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href={SITE_CONFIG.socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter"
-                  className="w-10 h-10 rounded-xl bg-[#09090B] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#3B82F6] transition-all min-h-[44px] min-w-[44px]"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href={SITE_CONFIG.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="w-10 h-10 rounded-xl bg-[#09090B] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#18181B] transition-all min-h-[44px] min-w-[44px]"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
+            {/* Social */}
+            <Card className="p-6">
+              <h3 className="text-sm font-medium text-[var(--text-primary)] mb-3">Social</h3>
+              <div className="flex items-center gap-2">
+                {[
+                  { href: SITE_CONFIG.socials.linkedin, Icon: Linkedin, label: "LinkedIn" },
+                  { href: SITE_CONFIG.socials.instagram, Icon: Instagram, label: "Instagram" },
+                  { href: SITE_CONFIG.socials.twitter, Icon: Twitter, label: "Twitter" },
+                  { href: SITE_CONFIG.socials.github, Icon: Github, label: "GitHub" },
+                ].map(({ href, Icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-9 h-9 rounded-lg bg-[var(--border)] flex items-center justify-center text-[var(--text-tertiary)] hover:text-[var(--text-primary)] hover:bg-[var(--border-hover)] transition-all min-h-[44px] min-w-[44px]"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
               </div>
             </Card>
 
-            {/* Google Maps Frame Placeholder */}
-            <Card className="bg-white/[0.04] p-2 border-white/[0.08] overflow-hidden">
-              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-[#09090B] flex items-center justify-center text-center p-4">
+            {/* Map */}
+            <Card className="p-1.5 overflow-hidden">
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-[var(--bg-elevated)]">
                 <iframe
                   title="College of Engineering Karunagappally Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.6708779919574!2d76.54452147575306!3d8.995972789445963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05e320f789ef23%3A0xe2ca4d88e0e64906!2sCollege%20of%20Engineering%20Karunagappally!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
@@ -116,19 +85,17 @@ export function ContactClient() {
             </Card>
           </div>
 
-          {/* Right Column: Contact Inquiry Form */}
+          {/* Right Column: Form */}
           <div className="lg:col-span-7">
-            <Card className="bg-white/[0.04] p-8 sm:p-10 border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-              <h2 className="text-2xl font-extrabold text-[#FAFAFA] mb-6">Send an Inquiry</h2>
+            <Card className="p-7 sm:p-9">
+              <h2 className="font-[var(--font-outfit)] text-xl font-semibold text-[var(--text-primary)] mb-6">Send an Inquiry</h2>
 
               {submitted ? (
-                <div className="p-8 rounded-2xl bg-white/[0.04] border border-white/[0.08] text-center space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#3B82F6] flex items-center justify-center mx-auto shadow-md">
-                    <CheckCircle2 className="w-6 h-6" strokeWidth={1.8} />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#FAFAFA]">Message Received!</h3>
-                  <p className="text-sm text-[#A1A1AA] max-w-md mx-auto font-normal">
-                    Thank you for contacting IEDC CEKNPY. Our student leads or nodal officer will get back to you shortly.
+                <div className="p-8 rounded-xl bg-[var(--bg-primary)] border border-[var(--border)] text-center space-y-3">
+                  <CheckCircle2 className="w-8 h-8 text-[var(--accent)] mx-auto" strokeWidth={1.5} />
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">Message Received</h3>
+                  <p className="text-sm text-[var(--text-secondary)] max-w-sm mx-auto">
+                    Our team will get back to you shortly.
                   </p>
                   <Button
                     onClick={() => {
@@ -137,59 +104,36 @@ export function ContactClient() {
                     }}
                     variant="outline"
                     size="sm"
-                    className="mt-4"
+                    className="mt-3"
                   >
-                    Send Another Message
+                    Send Another
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-bold text-[#FAFAFA] uppercase tracking-wider mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="e.g. Adithya Kumar"
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090B] border border-white/[0.12] text-[#FAFAFA] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent min-h-[44px]"
-                    />
-                  </div>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {[
+                    { id: "name", label: "Name", type: "text", required: true, placeholder: "Your name" },
+                    { id: "email", label: "Email", type: "email", required: true, placeholder: "name@example.com" },
+                    { id: "subject", label: "Subject", type: "text", required: false, placeholder: "What's this about?" },
+                  ].map((field) => (
+                    <div key={field.id}>
+                      <label htmlFor={field.id} className="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">
+                        {field.label}{field.required ? " *" : ""}
+                      </label>
+                      <input
+                        id={field.id}
+                        type={field.type}
+                        required={field.required}
+                        value={form[field.id as keyof typeof form]}
+                        onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
+                        placeholder={field.placeholder}
+                        className="w-full px-4 py-2.5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-hover)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent min-h-[44px] transition-colors"
+                      />
+                    </div>
+                  ))}
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-[#FAFAFA] uppercase tracking-wider mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="name@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090B] border border-white/[0.12] text-[#FAFAFA] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent min-h-[44px]"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-xs font-bold text-[#FAFAFA] uppercase tracking-wider mb-2">
-                      Subject / Domain
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      value={form.subject}
-                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      placeholder="e.g. Startup Incubation / Event Partnership"
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090B] border border-white/[0.12] text-[#FAFAFA] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent min-h-[44px]"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-[#FAFAFA] uppercase tracking-wider mb-2">
+                    <label htmlFor="message" className="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">
                       Message *
                     </label>
                     <textarea
@@ -198,8 +142,8 @@ export function ContactClient() {
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Describe your inquiry or project idea..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090B] border border-white/[0.12] text-[#FAFAFA] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent"
+                      placeholder="Your message..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-hover)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent transition-colors"
                     />
                   </div>
 
@@ -207,10 +151,10 @@ export function ContactClient() {
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full justify-center text-base bg-[#3B82F6] hover:bg-[#2563EB] text-white shadow-lg shadow-[#3B82F6]/20 border border-[#3B82F6]/50 min-h-[48px]"
-                    icon={<Send className="w-4 h-4 text-white" strokeWidth={1.8} />}
+                    className="w-full justify-center"
+                    icon={<Send className="w-4 h-4" strokeWidth={2} />}
                   >
-                    Submit Inquiry
+                    Submit
                   </Button>
                 </form>
               )}

@@ -11,9 +11,8 @@ export default function EventsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Calendar & Initiatives"
-        title="Events & Innovation Bootcamps"
-        description="From 24-hour hackathons and founder pitching sessions to technical masterclasses, discover what's happening at College of Engineering Karunagappally."
+        title="Events & Workshops"
+        description="Hackathons, bootcamps, summits, and technical masterclasses at College of Engineering Karunagappally."
         breadcrumbs={[{ label: "Events", href: "/events" }]}
       />
       <EventsClient />

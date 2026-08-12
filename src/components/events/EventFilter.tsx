@@ -18,13 +18,13 @@ export function EventFilter({
   counts,
 }: EventFilterProps) {
   const tabs: { id: FilterTab; label: string }[] = [
-    { id: "all", label: "All Events" },
+    { id: "all", label: "All" },
     { id: "upcoming", label: "Upcoming" },
     { id: "completed", label: "Completed" },
   ];
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+    <div className="flex items-center justify-center gap-1.5 mb-10 p-1 bg-[var(--bg-surface)] rounded-full border border-[var(--border)] max-w-fit mx-auto">
       {tabs.map((tab) => {
         const isActive = currentFilter === tab.id;
         const count = counts[tab.id] || 0;
@@ -34,19 +34,17 @@ export function EventFilter({
             key={tab.id}
             onClick={() => onFilterChange(tab.id)}
             className={cn(
-              "px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 min-h-[44px] backdrop-blur-md",
+              "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5 min-h-[36px]",
               isActive
-                ? "bg-[#3B82F6] text-[#FAFAFA] shadow-lg shadow-[#3B82F6]/20 border border-[#3B82F6]/50"
-                : "bg-white/[0.04] text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-white/[0.08] border border-white/[0.08]"
+                ? "bg-[var(--border-hover)] text-[var(--text-primary)]"
+                : "text-[var(--text-tertiary)] hover:text-[var(--text-secondary)]"
             )}
           >
             <span>{tab.label}</span>
             <span
               className={cn(
-                "px-2 py-0.5 rounded-full text-xs font-semibold",
-                isActive
-                  ? "bg-white/20 text-white"
-                  : "bg-white/[0.08] text-[#A1A1AA]"
+                "text-xs tabular-nums",
+                isActive ? "text-[var(--text-secondary)]" : "text-[var(--text-tertiary)]"
               )}
             >
               {count}

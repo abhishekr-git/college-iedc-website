@@ -11,9 +11,8 @@ export default function GalleryPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Media Archives"
-        title="IEDC Photo Gallery"
-        description="Capturing energy, collaboration, and innovation at College of Engineering Karunagappally."
+        title="Gallery"
+        description="Moments of innovation, collaboration, and celebration."
         breadcrumbs={[{ label: "Gallery", href: "/gallery" }]}
       />
       <GalleryClient />

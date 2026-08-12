@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PageHeaderProps {
@@ -24,32 +24,28 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "relative pt-32 pb-16 sm:pt-40 sm:pb-24 bg-[#050505] text-[#FAFAFA] overflow-hidden border-b border-white/[0.06]",
+        "relative pt-28 pb-14 sm:pt-36 sm:pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)] border-b border-[var(--border)]",
         className
       )}
     >
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#3B82F6]/08 blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.04] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Breadcrumb Navigation */}
+        {/* Breadcrumb */}
         {breadcrumbs.length > 0 && (
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-1.5 text-xs text-[#A1A1AA] font-medium">
+          <nav aria-label="Breadcrumb" className="mb-5">
+            <ol className="flex items-center gap-1.5 text-xs text-[var(--text-tertiary)] font-medium">
               <li>
-                <Link href="/" className="hover:text-[#FAFAFA] transition-colors">
+                <Link href="/" className="hover:text-[var(--text-primary)] transition-colors">
                   Home
                 </Link>
               </li>
               {breadcrumbs.map((crumb, idx) => (
                 <React.Fragment key={crumb.href}>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#71717A]" strokeWidth={1.8} />
+                  <ChevronRight className="w-3 h-3 text-[var(--text-tertiary)]" strokeWidth={1.5} />
                   <li>
                     {idx === breadcrumbs.length - 1 ? (
-                      <span className="text-[#3B82F6] font-semibold">{crumb.label}</span>
+                      <span className="text-[var(--text-secondary)]">{crumb.label}</span>
                     ) : (
-                      <Link href={crumb.href} className="hover:text-[#FAFAFA] transition-colors">
+                      <Link href={crumb.href} className="hover:text-[var(--text-primary)] transition-colors">
                         {crumb.label}
                       </Link>
                     )}
@@ -61,24 +57,17 @@ export function PageHeader({
         )}
 
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           className="max-w-3xl"
         >
-          {eyebrow && (
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[#A1A1AA] text-xs font-semibold uppercase tracking-widest mb-4 backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={1.8} />
-              <span>{eyebrow}</span>
-            </div>
-          )}
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#FAFAFA] tracking-tight leading-tight mb-4">
+          <h1 className="font-[var(--font-outfit)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-tight leading-[1.1] mb-4">
             {title}
           </h1>
 
           {description && (
-            <p className="text-base sm:text-lg text-[#A1A1AA] font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
               {description}
             </p>
           )}
