@@ -131,7 +131,7 @@ export const AARAMBH_FLAGSHIP: EventItem = {
       name: "Anandhu Babu",
       role: "Student Lead",
       company: "Aarambh 3.0 Convenor",
-      avatarUrl: "/images/team/speaker-2.svg",
+      avatarUrl: "/images/team/anandhu-babu.jpg",
     },
   ],
   gallery: [],
@@ -406,6 +406,197 @@ export const AARAMBH_FLAGSHIP: EventItem = {
 
 export const ALL_EVENTS: EventItem[] = [
   AARAMBH_FLAGSHIP,
+  {
+    id: "aetheron-2.0-robotic-workshop",
+    slug: "aetheron-2.0",
+    title: "Aetheron 2.0 - Robotic Workshop",
+    tagline: "Innovate • Build • Inspire — Exclusive Robotics Workshop for College Students",
+    shortDescription:
+      "Intensive hands-on robotics and hardware innovation workshop exclusively for college students. Learn sensor telemetry, motor driver controls, and build autonomous robots.",
+    fullDescription:
+      "IEDC College of Engineering Karunagappally hosted 'Aetheron 2.0 Robotic Workshop', an advanced hands-on robotics masterclass tailored exclusively for college engineering students. Guided by the vision 'Innovate • Build • Inspire', participants mastered microcontrollers, sensor integration, motor driver controls, and engineered intelligent autonomous robotic systems in real time.",
+    posterUrl: "/posters/aetheron-2.jpg",
+    bannerUrl: "/posters/aetheron-2.jpg",
+    date: "26 September 2026",
+    time: "09:30 AM - 04:30 PM",
+    location: "Maker Space Lab, CEKNPY",
+    status: "completed",
+    category: "workshop",
+    isFeatured: true,
+    highlights: [
+      "Exclusive hands-on workshop tailored for college students",
+      "Registration fee: ₹150 per head with complete hardware kits",
+      "Sensor telemetry, microcontroller logic & motor controls",
+      "Build, program, and deploy autonomous robotic prototypes",
+    ],
+    timeline: [
+      {
+        time: "09:30 AM",
+        title: "Microcontroller Architecture & Electronics",
+        description: "Hands-on walkthrough of hardware components, pinouts, and embedded logic.",
+      },
+      {
+        time: "11:30 AM",
+        title: "Sensor Interfacing & Telemetry",
+        description: "Calibrating distance sensors, sensory feedback loops, and motor driver circuitry.",
+      },
+      {
+        time: "02:00 PM",
+        title: "Autonomous Robot Build & Deployment",
+        description: "Hardware assembly, firmware flashing, and testing on the obstacle track.",
+      },
+    ],
+    speakers: [
+      {
+        name: "IEDC Technical Team",
+        role: "Robotics & Hardware Mentors",
+        company: "IEDC CEKNPY",
+        avatarUrl: "/posters/aetheron-2.jpg",
+      },
+    ],
+    gallery: [
+      "/images/events/aetheron-2/aetheron-2-1.jpg",
+      "/images/events/aetheron-2/aetheron-2-2.jpg",
+      "/images/events/aetheron-2/aetheron-2-3.jpg",
+      "/images/events/aetheron-2/aetheron-2-4.jpg",
+    ],
+  },
+  {
+    id: "ascend-26",
+    slug: "ascend-26",
+    title: "ASCEND '26",
+    tagline: "Exclusively for School Students — AI Tools, Robotics Workshop & Elocution Competition",
+    shortDescription:
+      "A hands-on technical immersion conclave exclusively for school students featuring AI Tools, Robotics Workshop, and an Elocution Competition.",
+    fullDescription:
+      "IEDC College of Engineering Karunagappally organized 'ASCEND'26', an exclusive full-day technical and innovation conclave crafted specifically for school students. The event introduced young innovators to generative artificial intelligence workflows in the AI Tools Workshop, hands-on hardware engineering in the Robotics Workshop, and public speaking in the Elocution Competition.",
+    posterUrl: "/posters/ascend-26.jpg",
+    bannerUrl: "/posters/ascend-26.jpg",
+    date: "21 February 2026",
+    time: "09:00 AM - 04:00 PM",
+    location: "College of Engineering Karunagappally",
+    status: "completed",
+    category: "workshop",
+    isFeatured: true,
+    highlights: [
+      "Exclusively tailored for school students",
+      "AI Tools Workshop: Hands-on generative AI & prompt engineering",
+      "Robotics Workshop: Microcontrollers, sensors & bot assembly",
+      "Elocution Competition: Public speaking on tech innovation",
+    ],
+    timeline: [
+      {
+        time: "09:00 AM",
+        title: "Check-In & Welcome Inauguration",
+        description: "Welcome address and orientation for visiting school delegates.",
+      },
+      {
+        time: "10:00 AM",
+        title: "AI Tools Workshop",
+        description: "Interactive session on artificial intelligence, modern tools, and practical productivity.",
+      },
+      {
+        time: "11:45 AM",
+        title: "Elocution Competition",
+        description: "Public speaking contest on technology and societal innovation.",
+      },
+      {
+        time: "01:30 PM",
+        title: "Robotics & Hardware Workshop",
+        description: "Hands-on robotics prototyping, sensor wiring, and demo testing.",
+      },
+      {
+        time: "03:30 PM",
+        title: "Valedictory & Prize Distribution",
+        description: "Awarding certificates and mementos to student participants and winners.",
+      },
+    ],
+    speakers: [
+      {
+        name: "Prof. Renjith SR",
+        role: "Nodal Officer, IEDC CEK",
+        company: "College of Engineering Karunagappally",
+        avatarUrl: "/images/team/renjith-sr.jpg",
+      },
+      {
+        name: "IEDC Student Mentors",
+        role: "Technical Leads & Robotics Mentors",
+        company: "IEDC CEKNPY",
+        avatarUrl: "/posters/ascend-26.jpg",
+      },
+    ],
+    gallery: [
+      "/images/events/ascend-26/ascend-1.jpg",
+      "/images/events/ascend-26/ascend-2.jpg",
+      "/images/events/ascend-26/ascend-3.jpg",
+      "/images/events/ascend-26/ascend-4.jpg",
+    ],
+  },
+  {
+    id: "startup-saturday",
+    slug: "startup-saturday",
+    title: "Startup Saturday: Karunagappally",
+    tagline: "The Wait is Over — Ideas, Connections, and Opportunities",
+    shortDescription:
+      "Get ready for another Saturday of ideas, connections, and opportunities. In association with IEDC CEK at College of Engineering Karunagappally.",
+    fullDescription:
+      "IEDC College of Engineering Karunagappally, in association with Startup Saturday, organized 'Startup Saturday: Karunagappally'. Designed to ignite entrepreneurial thinking and foster community networking, the edition brought together aspiring founders, student innovators, and startup enthusiasts for interactive discussions, founder journeys, and collaborative venture ideation.",
+    posterUrl: "/posters/startup-saturday.png",
+    bannerUrl: "/posters/startup-saturday.png",
+    date: "25 April 2026",
+    time: "03:00 PM - 06:00 PM",
+    location: "College of Engineering Karunagappally, Kollam",
+    status: "completed",
+    category: "talk",
+    isFeatured: true,
+    highlights: [
+      "In Association with IEDC, College of Engineering Karunagappally",
+      "Founder fireside chats & startup journey insights",
+      "Interactive idea pitching & constructive peer feedback",
+      "Community networking connecting student innovators with mentors",
+    ],
+    timeline: [
+      {
+        time: "03:00 PM",
+        title: "Check-In & Welcome Remarks",
+        description: "Registration check-in and welcome address by IEDC CEK.",
+      },
+      {
+        time: "03:30 PM",
+        title: "Founder Fireside Chat",
+        description: "Interactive session discussing early-stage venture hurdles, prototyping, and finding early adopters.",
+      },
+      {
+        time: "04:30 PM",
+        title: "Open Mic & Idea Showcase",
+        description: "Rapid-fire idea pitching by student teams with actionable feedback from founders and mentors.",
+      },
+      {
+        time: "05:30 PM",
+        title: "Community Networking",
+        description: "Informal networking, connection building, and high tea.",
+      },
+    ],
+    speakers: [
+      {
+        name: "Prof. Renjith SR",
+        role: "Nodal Officer, IEDC CEK",
+        company: "College of Engineering Karunagappally",
+        avatarUrl: "/images/team/renjith-sr.jpg",
+      },
+      {
+        name: "Startup Saturday Facilitators",
+        role: "Community Leads",
+        company: "Startup Saturday & IEDC CEK",
+        avatarUrl: "/posters/startup-saturday.png",
+      },
+    ],
+    gallery: [
+      "/images/events/startup-saturday/startup-saturday-1.jpg",
+      "/images/events/startup-saturday/startup-saturday-2.png",
+      "/images/events/startup-saturday/startup-saturday-3.jpg",
+    ],
+  },
   {
     id: "tomorrows-game-changers",
     slug: "tomorrows-game-changers",
