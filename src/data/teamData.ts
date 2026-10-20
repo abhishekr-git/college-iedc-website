@@ -308,7 +308,6 @@ export const CURRENT_EXECOM: TeamMember[] = [
 export const PAST_EXECOM: PastExecomYear[] = [
   {
     year: "2024 - 2025",
-    theme: "Scaling Horizons & Regional Hackathons",
     members: [
       {
         id: "past-nodal-renjith",
