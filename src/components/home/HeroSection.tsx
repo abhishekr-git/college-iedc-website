@@ -41,7 +41,7 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed max-w-[520px] mx-auto mb-10"
           >
-            The innovation hub of College of Engineering Karunagappally — empowering students to build, launch, and scale.
+            The innovation hub of College of Engineering Karunagappally empowering students to build, launch, and scale.
           </motion.p>
 
           {/* CTA Buttons */}
